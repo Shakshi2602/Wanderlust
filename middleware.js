@@ -40,6 +40,7 @@ module.exports.valiateListing = (req, res, next) => {
 };
 
 module.exports.valiateReview = (req, res, next) => {
+  // console.log("BODY:", req.body);
   let { error } = reviewSchema.validate(req.body);
   if (error) {
     let errMsg = error.details.map((el) => el.message).join(",");
