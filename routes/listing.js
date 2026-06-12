@@ -25,6 +25,7 @@ const upload = multer({ storage });
     .put(
       isloggedIn,
       isOwner,
+      upload.single("listing[image]"),
       validateListing,
       wrapAsync(listingController.updateListing),
     )
